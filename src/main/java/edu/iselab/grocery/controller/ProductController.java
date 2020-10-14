@@ -61,6 +61,10 @@ public class ProductController {
     
     public void list() {
         
+        System.out.println("───────────────");
+        System.out.println("List of Products");
+        System.out.println("───────────────");
+        
         AsciiTable table = new AsciiTable();
         
         table.addRule();
@@ -78,7 +82,8 @@ public class ProductController {
         
         table.addRule();
         
-        table.getRenderer().setCWC(new CWC_LongestWordMax(20));
+        table.getContext().setWidth(50);
+        table.getRenderer().setCWC(new CWC_LongestWordMax(50));
         
         System.out.println(table.render());
         
@@ -86,6 +91,10 @@ public class ProductController {
     }
     
     public void add() {
+        
+        System.out.println("───────────────");
+        System.out.println("New Product");
+        System.out.println("───────────────");
         
         Product product = new Product();
         
