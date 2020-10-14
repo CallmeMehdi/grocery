@@ -1,7 +1,5 @@
 package edu.iselab.grocery.persistence.model;
 
-import java.time.LocalDateTime;
-
 public class Product extends AbstractModel {
 
     private String description;
@@ -27,9 +25,5 @@ public class Product extends AbstractModel {
     @Override
     public String toString() {
         return description + "\t" + price;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
+    }    
 }
