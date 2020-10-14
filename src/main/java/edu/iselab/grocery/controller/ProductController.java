@@ -84,7 +84,17 @@ public class ProductController {
         System.out.print(" Search for id: ");
         int id = ConsoleUtils.promptUserForAnInt();
 
-        productRepository.removeById(id);
+        Product removed = productRepository.removeById(id);
+        
+        System.out.println();
+        
+        if (removed == null) {
+            System.err.println(" Product not foud");
+        } else {
+            System.out.println(" Successfully removed");
+        }
+            
+        ConsoleUtils.pressEnterToContinue();
     }
     
     public void searchById() {

@@ -72,7 +72,7 @@ public class ConsoleUtils {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         
         System.out.println();
-        System.out.println("Press ENTER to continue...");
+        System.out.println(" Press ENTER to continue...");
         
         try {
             br.readLine();
