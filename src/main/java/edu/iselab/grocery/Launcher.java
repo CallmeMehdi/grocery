@@ -24,7 +24,7 @@ public class Launcher {
             
             ConsoleUtils.printLine();
             
-            System.out.print("Option: ");
+            System.out.print(" Option: ");
             
             option = ConsoleUtils.promptUserForAnInt();
             

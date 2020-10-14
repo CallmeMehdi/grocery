@@ -30,6 +30,9 @@ public class ConsoleUtils {
         String str = getString();
 
         while (str == null || str.trim().isEmpty()) {
+            
+            System.err.println(String.format("'%s' is not a valid string", str));
+            
             str = getString();
         }
 

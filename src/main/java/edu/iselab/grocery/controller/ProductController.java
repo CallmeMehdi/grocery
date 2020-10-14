@@ -47,7 +47,7 @@ public class ProductController {
             
             ConsoleUtils.printLine();
             
-            System.out.print("Option: ");
+            System.out.print(" Option: ");
             
             option = ConsoleUtils.promptUserForAnInt();
             
@@ -78,13 +78,13 @@ public class ProductController {
         
         ConsoleUtils.printRectangle("Search by Id");
         
-        System.out.print("Search for: ");
+        System.out.print(" Search for: ");
         int term = ConsoleUtils.promptUserForAnInt();
 
         Product found = productRepository.findById(term);
 
         if (found == null) {
-            System.err.println("Product not foud");
+            System.err.println(" Product not foud");
         } else {
             list(Arrays.asList(found));
         }
@@ -96,7 +96,7 @@ public class ProductController {
         
         ConsoleUtils.printRectangle("Search by Description");
         
-        System.out.print("Search for: ");
+        System.out.print(" Search for: ");
         String term = ConsoleUtils.promptUserForANotBlankString();
         
         List<Product> found = productRepository.findByDescription(term);
@@ -112,9 +112,8 @@ public class ProductController {
         
         list(productRepository.findAll());
     }
+    
     private void list(List<Product> products) {
-        
-        ConsoleUtils.clear();
         
         AsciiTable table = new AsciiTable();
         
@@ -149,10 +148,10 @@ public class ProductController {
         
         Product product = new Product();
         
-        System.out.print("Description: ");
+        System.out.print(" Description: ");
         product.setDescription(ConsoleUtils.promptUserForANotBlankString());
         
-        System.out.print("Price: ");
+        System.out.print(" Price: ");
         product.setPrice(ConsoleUtils.promptUserForADouble());
         
         productRepository.save(product);
