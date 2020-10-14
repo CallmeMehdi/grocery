@@ -3,6 +3,21 @@ package edu.iselab.grocery.controller;
 import edu.iselab.grocery.util.ScannerUtils;
 
 public class ProductController {
+    
+    private static ProductController instance;
+    
+    private ProductController() {
+        
+    }
+    
+    public static ProductController getInstance() {
+
+        if (instance == null) {
+            instance = new ProductController();
+        }
+
+        return instance;
+    }
 
     public void start() {
         

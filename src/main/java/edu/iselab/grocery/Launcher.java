@@ -5,7 +5,7 @@ import edu.iselab.grocery.util.ScannerUtils;
 
 public class Launcher {
     
-    public static ProductController productController = new ProductController();
+    public static ProductController productController = ProductController.getInstance();
 
     public static void main(String[] args) {
 
