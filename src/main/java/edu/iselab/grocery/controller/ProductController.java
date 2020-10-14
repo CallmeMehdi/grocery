@@ -1,5 +1,7 @@
 package edu.iselab.grocery.controller;
 
+import java.util.List;
+
 import de.vandermeer.asciitable.AsciiTable;
 import de.vandermeer.asciitable.CWC_LongestWordMax;
 import edu.iselab.grocery.persistence.model.Product;
@@ -36,7 +38,7 @@ public class ProductController {
             System.out.println("───────────────");
             System.out.println("  1 - Add");
             System.out.println("  2 - Remove");
-            System.out.println("  3 - Search");
+            System.out.println("  3 - Search by Name");
             System.out.println("  4 - List");
             System.out.println("  0 - Back");
             System.out.println("───────────────");
@@ -59,7 +61,23 @@ public class ProductController {
         
     }
     
+    private void searchByName() {
+        
+        System.out.println("───────────────");
+        System.out.println("List of Products");
+        System.out.println("───────────────");
+        
+        String term = ScannerUtils.getString();
+        
+        List<Product> found = productRepository.findByDescription(term);
+        
+        list(found);
+    }
+    
     private void list() {
+        list(productRepository.findAll());
+    }
+    private void list(List<Product> products) {
         
         System.out.println("───────────────");
         System.out.println("List of Products");
@@ -70,7 +88,7 @@ public class ProductController {
         table.addRule();
         table.addRow("Id","Description","Price");
                 
-        for (Product product : productRepository.findAll()) {
+        for (Product product : products) {
             
             table.addRule();
             table.addRow(
