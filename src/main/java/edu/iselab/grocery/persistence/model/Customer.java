@@ -2,7 +2,7 @@ package edu.iselab.grocery.persistence.model;
 
 public class Customer extends AbstractModel {
 
-    public String name;
+    private String name;
     
     public String getName() {
         return name;
