@@ -2,9 +2,9 @@ package edu.iselab.grocery.persistence.model;
 
 public class Address {
 
-    protected String address;
+    private String address;
 
-    protected String city;
+    private String city;
 
     public String getAddress() {
         return address;
