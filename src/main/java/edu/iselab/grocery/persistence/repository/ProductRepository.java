@@ -5,16 +5,10 @@ import java.util.List;
 
 import edu.iselab.grocery.persistence.model.Product;
 
-public class ProductRepository {
-    
+public class ProductRepository extends AbstractRepository<Product> {
+
     private static ProductRepository instance;
-    
-    private List<Product> products;
-    
-    private ProductRepository() {
-        this.products = new ArrayList<>();
-    }
-    
+
     public static ProductRepository getInstance() {
 
         if (instance == null) {
@@ -23,12 +17,34 @@ public class ProductRepository {
 
         return instance;
     }
-    
-    public List<Product> findAll(){
-        return products;
-    }
 
-    public void save(Product product) {
-        this.products.add(product);
+    public List<Product> findByDescription(String term) {
+
+        List<Product> found = new ArrayList<>();
+
+        if (term == null || term.isEmpty()) {
+            return found;
+        }
+
+        for (Product product : findAll()) {
+
+            if (product.getDescription().toLowerCase().contains(term.toLowerCase())) {
+                found.add(product);
+            }
+        }
+
+        return found;
+    }
+    
+    public Product findById(int id) {
+
+        for (Product product : findAll()) {
+
+            if (product.getId() == id) {
+                return product;
+            }
+        }
+
+        return null;
     }
 }

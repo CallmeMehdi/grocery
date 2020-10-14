@@ -1,5 +1,8 @@
 package edu.iselab.grocery.controller;
 
+import java.util.Arrays;
+import java.util.List;
+
 import de.vandermeer.asciitable.AsciiTable;
 import de.vandermeer.asciitable.CWC_LongestWordMax;
 import edu.iselab.grocery.persistence.model.Product;
@@ -36,8 +39,9 @@ public class ProductController {
             System.out.println("───────────────");
             System.out.println("  1 - Add");
             System.out.println("  2 - Remove");
-            System.out.println("  3 - Search");
-            System.out.println("  4 - List");
+            System.out.println("  3 - Search by Id");
+            System.out.println("  4 - Search by Description");
+            System.out.println("  5 - List");
             System.out.println("  0 - Back");
             System.out.println("───────────────");
             System.out.print("Option: ");
@@ -48,7 +52,13 @@ public class ProductController {
                 case 1:
                     add();
                     break;
+                case 3:
+                    searchById();
+                    break;
                 case 4:
+                    searchByDescription();
+                    break;
+                case 5:
                     list();
                     break;
                 default:
@@ -59,18 +69,54 @@ public class ProductController {
         
     }
     
-    public void list() {
+    public void searchById() {
+
+        System.out.println("──────────────────────");
+        System.out.println("Search by Id");
+        System.out.println("──────────────────────");
+
+        System.out.print("Id: ");
+        int term = ScannerUtils.getInt();
+
+        Product found = productRepository.findById(term);
+
+        if (found == null) {
+            System.err.println("Product not foud");
+        } else {
+            list(Arrays.asList(found));
+        }
+    }
+    
+    private void searchByDescription() {
+        
+        System.out.println("──────────────────────");
+        System.out.println("Search by Description");
+        System.out.println("──────────────────────");
+        
+        System.out.print("Search for: ");
+        String term = ScannerUtils.getString();
+        
+        List<Product> found = productRepository.findByDescription(term);
+        
+        list(found);
+    }
+    
+    private void list() {
         
         System.out.println("───────────────");
         System.out.println("List of Products");
         System.out.println("───────────────");
+        
+        list(productRepository.findAll());
+    }
+    private void list(List<Product> products) {
         
         AsciiTable table = new AsciiTable();
         
         table.addRule();
         table.addRow("Id","Description","Price");
                 
-        for (Product product : productRepository.findAll()) {
+        for (Product product : products) {
             
             table.addRule();
             table.addRow(
@@ -90,7 +136,7 @@ public class ProductController {
         ScannerUtils.pressEnterToContinue();
     }
     
-    public void add() {
+    private void add() {
         
         System.out.println("───────────────");
         System.out.println("New Product");

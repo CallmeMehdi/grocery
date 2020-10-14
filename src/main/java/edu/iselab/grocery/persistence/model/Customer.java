@@ -1,31 +1,24 @@
 package edu.iselab.grocery.persistence.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Customer extends AbstractModel {
 
-    private String name;
+    private String fullName;
     
-    private List<Address> addresses;
-    
-    public Customer() {
-        this.addresses = new ArrayList<>();
-    }
-    
-    public String getName() {
-        return name;
+    private String phoneNumber;
+
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+    
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public List<Address> getAddresses() {
-        return addresses;
-    }
-
-    public void setAddresses(List<Address> addresses) {
-        this.addresses = addresses;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }
