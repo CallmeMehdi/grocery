@@ -1,14 +1,20 @@
 package edu.iselab.grocery.persistence.model;
 
+import edu.iselab.grocery.util.IdUtils;
+
 public abstract class AbstractModel {
 
-    public String id;
+    public int id;
+    
+    public AbstractModel() {
+        this.id = IdUtils.getNextId();
+    }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 }
