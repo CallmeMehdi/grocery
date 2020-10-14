@@ -1,5 +1,6 @@
 package edu.iselab.grocery.controller;
 
+import de.vandermeer.asciitable.AsciiTable;
 import edu.iselab.grocery.persistence.model.Product;
 import edu.iselab.grocery.persistence.repository.ProductRepository;
 import edu.iselab.grocery.util.ScannerUtils;
@@ -59,11 +60,26 @@ public class ProductController {
     
     public void list() {
         
-        System.out.println("Description \t Price");
-        System.out.println("---------------------");
-        for(Product product : productRepository.findAll()) {
-            System.out.println(product);
+        AsciiTable table = new AsciiTable();
+        
+        table.getContext().setWidth(40);
+        
+        table.addRule();
+        table.addRow("Id","Description","Price");
+                
+        for (Product product : productRepository.findAll()) {
+            
+            table.addRule();
+            table.addRow(
+                product.getId(), 
+                product.getDescription(), 
+                product.getPrice()
+            );
         }
+        
+        table.addRule();
+        
+        System.out.println(table.render());
         
         ScannerUtils.pressEnterToContinue();
     }
