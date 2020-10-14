@@ -10,6 +10,8 @@ public class Customer extends AbstractModel {
     
     private String address;
     
+    protected String city;
+    
     public String getFullName() {
         return fullName;
     }
