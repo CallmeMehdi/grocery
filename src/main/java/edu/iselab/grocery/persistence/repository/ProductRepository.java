@@ -7,10 +7,21 @@ import edu.iselab.grocery.persistence.model.Product;
 
 public class ProductRepository {
     
+    private static ProductRepository instance;
+    
     private List<Product> products;
     
-    public ProductRepository() {
+    private ProductRepository() {
         this.products = new ArrayList<>();
+    }
+    
+    public static ProductRepository getInstance() {
+
+        if (instance == null) {
+            instance = new ProductRepository();
+        }
+
+        return instance;
     }
     
     public List<Product> findAll(){
