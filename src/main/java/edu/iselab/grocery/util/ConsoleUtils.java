@@ -14,7 +14,7 @@ public class ConsoleUtils {
 
     private static Scanner scan = new Scanner(System.in);
     
-    public static String getString() {
+    private static String getString() {
         return scan.nextLine();
     }
     

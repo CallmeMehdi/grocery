@@ -97,7 +97,7 @@ public class ProductController {
         ConsoleUtils.printRectangle("Search by Description");
         
         System.out.print("Search for: ");
-        String term = ConsoleUtils.getString();
+        String term = ConsoleUtils.promptUserForAString();
         
         List<Product> found = productRepository.findByDescription(term);
         
