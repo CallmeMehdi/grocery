@@ -8,7 +8,7 @@ public abstract class AbstractModel {
 
     public int id;
     
-    public LocalDateTime createdAt;
+    protected LocalDateTime createdAt;
     
     public AbstractModel() {
         this.id = IdUtils.getNextId();
