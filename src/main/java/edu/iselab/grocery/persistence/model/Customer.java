@@ -8,7 +8,7 @@ public class Customer extends AbstractModel {
     
     private String birthday;
     
-    private String address;
+    protected String address;
     
     public String getFullName() {
         return fullName;
