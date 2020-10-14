@@ -64,6 +64,9 @@ public class ProductController {
         for(Product product : productRepository.findAll()) {
             System.out.println(product);
         }
+        
+        System.out.println("Press ENTER to continue...");
+        ScannerUtils.getString();
     }
     
     public void add() {

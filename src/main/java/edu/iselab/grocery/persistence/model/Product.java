@@ -21,4 +21,9 @@ public class Product extends AbstractModel {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return description + "\t" + price;
+    }
 }
