@@ -25,7 +25,7 @@ public class Launcher {
             System.out.println("───────────────");
             System.out.print("Option: ");
             
-            option = ConsoleUtils.getInt();
+            option = ConsoleUtils.promptUserForAnInt();
             
             switch (option) {
                 case 2:

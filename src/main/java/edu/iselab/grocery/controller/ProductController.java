@@ -46,7 +46,7 @@ public class ProductController {
             System.out.println("───────────────");
             System.out.print("Option: ");
             
-            option = ConsoleUtils.getInt();
+            option = ConsoleUtils.promptUserForAnInt();
             
             switch (option) {
                 case 1:
@@ -76,7 +76,7 @@ public class ProductController {
         System.out.println("──────────────────────");
 
         System.out.print("Id: ");
-        int term = ConsoleUtils.getInt();
+        int term = ConsoleUtils.promptUserForAnInt();
 
         Product found = productRepository.findById(term);
 
@@ -148,7 +148,7 @@ public class ProductController {
         product.setDescription(ConsoleUtils.getString());
         
         System.out.print("Price: ");
-        product.setPrice(ConsoleUtils.getDouble());
+        product.setPrice(ConsoleUtils.promptUserForADouble());
         
         productRepository.save(product);
     }

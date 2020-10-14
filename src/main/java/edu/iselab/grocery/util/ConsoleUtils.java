@@ -13,13 +13,10 @@ public class ConsoleUtils {
     private static Scanner scan = new Scanner(System.in);
     
     public static String getString() {
-        
-        String str = scan.nextLine();
-        
-        return str;
+        return scan.nextLine();
     }
     
-    public static int getInt() {
+    public static int promptUserForAnInt() {
 
         String str = getString();
 
@@ -33,7 +30,7 @@ public class ConsoleUtils {
         return NumberUtils.toInt(str);
     }
 
-    public static double getDouble() {
+    public static double promptUserForADouble() {
 
         String str = getString();
 
