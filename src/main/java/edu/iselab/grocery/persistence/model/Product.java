@@ -8,8 +8,6 @@ public class Product extends AbstractModel {
     
     private double price;
     
-    public LocalDateTime createdAt;
-
     public String getDescription() {
         return description;
     }
