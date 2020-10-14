@@ -1,5 +1,6 @@
 package edu.iselab.grocery.controller;
 
+import java.util.Arrays;
 import java.util.List;
 
 import de.vandermeer.asciitable.AsciiTable;
@@ -38,8 +39,9 @@ public class ProductController {
             System.out.println("───────────────");
             System.out.println("  1 - Add");
             System.out.println("  2 - Remove");
-            System.out.println("  3 - Search by Description");
-            System.out.println("  4 - List");
+            System.out.println("  3 - Search by Id");
+            System.out.println("  4 - Search by Description");
+            System.out.println("  5 - List");
             System.out.println("  0 - Back");
             System.out.println("───────────────");
             System.out.print("Option: ");
@@ -51,9 +53,12 @@ public class ProductController {
                     add();
                     break;
                 case 3:
-                    searchByDescription();
+                    searchById();
                     break;
                 case 4:
+                    searchByDescription();
+                    break;
+                case 5:
                     list();
                     break;
                 default:
@@ -62,6 +67,24 @@ public class ProductController {
             
         } while(option != 0);
         
+    }
+    
+    public void searchById() {
+
+        System.out.println("──────────────────────");
+        System.out.println("Search by Id");
+        System.out.println("──────────────────────");
+
+        System.out.print("Id: ");
+        int term = ScannerUtils.getInt();
+
+        Product found = productRepository.findById(term);
+
+        if (found == null) {
+            System.err.println("Product not foud");
+        } else {
+            list(Arrays.asList(found));
+        }
     }
     
     private void searchByDescription() {
