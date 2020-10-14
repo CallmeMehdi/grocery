@@ -17,12 +17,4 @@ public abstract class AbstractModel {
     public void setId(int id) {
         this.id = id;
     }
-    
-    public String getPhoneNumber() {
-        return "";
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        
-    }
 }
