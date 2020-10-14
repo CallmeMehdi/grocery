@@ -1,8 +1,11 @@
 package edu.iselab.grocery;
 
+import edu.iselab.grocery.controller.ProductController;
 import edu.iselab.grocery.util.ScannerUtils;
 
 public class Launcher {
+    
+    public static ProductController productController = new ProductController();
 
     public static void main(String[] args) {
 
@@ -21,6 +24,14 @@ public class Launcher {
             System.out.print("Option: ");
             
             option = ScannerUtils.getInt();
+            
+            switch (option) {
+                case 2:
+                    productController.start();
+                    break;
+                default:
+                    System.err.println("Invalid option. Please try again");
+            }
             
         } while(option != 0);
         
