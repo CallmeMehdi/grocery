@@ -1,10 +1,7 @@
 package edu.iselab.grocery;
 
-import com.sun.xml.internal.messaging.saaj.packaging.mime.util.OutputUtil;
-
 import edu.iselab.grocery.controller.ProductController;
 import edu.iselab.grocery.util.ConsoleUtils;
-import edu.iselab.grocery.util.ScannerUtils;
 
 public class Launcher {
     
@@ -28,7 +25,7 @@ public class Launcher {
             System.out.println("───────────────");
             System.out.print("Option: ");
             
-            option = ScannerUtils.getInt();
+            option = ConsoleUtils.getInt();
             
             switch (option) {
                 case 2:

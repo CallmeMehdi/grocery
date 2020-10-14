@@ -7,7 +7,7 @@ import de.vandermeer.asciitable.AsciiTable;
 import de.vandermeer.asciitable.CWC_LongestWordMax;
 import edu.iselab.grocery.persistence.model.Product;
 import edu.iselab.grocery.persistence.repository.ProductRepository;
-import edu.iselab.grocery.util.ScannerUtils;
+import edu.iselab.grocery.util.ConsoleUtils;
 
 public class ProductController {
     
@@ -46,7 +46,7 @@ public class ProductController {
             System.out.println("───────────────");
             System.out.print("Option: ");
             
-            option = ScannerUtils.getInt();
+            option = ConsoleUtils.getInt();
             
             switch (option) {
                 case 1:
@@ -76,7 +76,7 @@ public class ProductController {
         System.out.println("──────────────────────");
 
         System.out.print("Id: ");
-        int term = ScannerUtils.getInt();
+        int term = ConsoleUtils.getInt();
 
         Product found = productRepository.findById(term);
 
@@ -94,7 +94,7 @@ public class ProductController {
         System.out.println("──────────────────────");
         
         System.out.print("Search for: ");
-        String term = ScannerUtils.getString();
+        String term = ConsoleUtils.getString();
         
         List<Product> found = productRepository.findByDescription(term);
         
@@ -133,7 +133,7 @@ public class ProductController {
         
         System.out.println(table.render());
         
-        ScannerUtils.pressEnterToContinue();
+        ConsoleUtils.pressEnterToContinue();
     }
     
     private void add() {
@@ -145,10 +145,10 @@ public class ProductController {
         Product product = new Product();
         
         System.out.print("Description: ");
-        product.setDescription(ScannerUtils.getString());
+        product.setDescription(ConsoleUtils.getString());
         
         System.out.print("Price: ");
-        product.setPrice(ScannerUtils.getDouble());
+        product.setPrice(ConsoleUtils.getDouble());
         
         productRepository.save(product);
     }
