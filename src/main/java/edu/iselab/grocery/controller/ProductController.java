@@ -55,6 +55,9 @@ public class ProductController {
                 case 1:
                     add();
                     break;
+                case 2:
+                    remove();
+                    break;
                 case 3:
                     searchById();
                     break;
@@ -70,6 +73,18 @@ public class ProductController {
             
         } while(option != 0);
         
+    }
+    
+    public void remove() {
+
+        ConsoleUtils.clear();
+        
+        ConsoleUtils.printRectangle("Remove");
+        
+        System.out.print(" Search for id: ");
+        int id = ConsoleUtils.promptUserForAnInt();
+
+        productRepository.removeById(id);
     }
     
     public void searchById() {
