@@ -9,11 +9,11 @@ public class Launcher {
 
     public static void main(String[] args) {
 
-        ConsoleUtils.clear();
-        
         int option = 0;
         
         do {
+            
+            ConsoleUtils.clear();
             
             System.out.println("───────────────");
             System.out.println("Menu");

@@ -8,6 +8,10 @@ import java.util.Scanner;
 import org.apache.commons.lang3.SystemUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 
+import de.vandermeer.asciitable.AsciiTable;
+import de.vandermeer.asciitable.CWC_LongestWordMax;
+import edu.iselab.grocery.persistence.model.Product;
+
 public class ConsoleUtils {
 
     private static Scanner scan = new Scanner(System.in);
@@ -71,6 +75,20 @@ public class ConsoleUtils {
         } catch (final Exception e) {
             // Handle any exceptions.
         }
+    }
+    
+    public static void printRectangle(String text) {
+        
+        AsciiTable table = new AsciiTable();
+        
+        table.addRule();
+        table.addRow(text);
+        table.addRule();
+        
+        table.getContext().setWidth(50);
+        table.getRenderer().setCWC(new CWC_LongestWordMax(50));
+        
+        System.out.println(table.render());
     }
 
 }

@@ -34,6 +34,8 @@ public class ProductController {
         
         do {
             
+            ConsoleUtils.clear();
+            
             System.out.println("───────────────");
             System.out.println("Products");
             System.out.println("───────────────");
@@ -71,6 +73,8 @@ public class ProductController {
     
     public void searchById() {
 
+        ConsoleUtils.clear();
+        
         System.out.println("──────────────────────");
         System.out.println("Search by Id");
         System.out.println("──────────────────────");
@@ -89,6 +93,8 @@ public class ProductController {
     
     private void searchByDescription() {
         
+        ConsoleUtils.clear();
+        
         System.out.println("──────────────────────");
         System.out.println("Search by Description");
         System.out.println("──────────────────────");
@@ -103,6 +109,8 @@ public class ProductController {
     
     private void list() {
         
+        ConsoleUtils.clear();
+        
         System.out.println("───────────────");
         System.out.println("List of Products");
         System.out.println("───────────────");
@@ -110,6 +118,8 @@ public class ProductController {
         list(productRepository.findAll());
     }
     private void list(List<Product> products) {
+        
+        ConsoleUtils.clear();
         
         AsciiTable table = new AsciiTable();
         
@@ -137,6 +147,8 @@ public class ProductController {
     }
     
     private void add() {
+        
+        ConsoleUtils.clear();
         
         System.out.println("───────────────");
         System.out.println("New Product");
