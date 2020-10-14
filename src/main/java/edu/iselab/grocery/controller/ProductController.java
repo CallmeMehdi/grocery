@@ -180,5 +180,10 @@ public class ProductController {
         product.setPrice(ConsoleUtils.promptUserForADouble());
         
         productRepository.save(product);
+        
+        System.out.println();
+        System.out.println(" Successfully added");
+            
+        ConsoleUtils.pressEnterToContinue();
     }
 }
