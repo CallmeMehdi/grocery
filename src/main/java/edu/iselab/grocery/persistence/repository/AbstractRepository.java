@@ -10,7 +10,7 @@ public class AbstractRepository<T> {
     protected AbstractRepository() {
         this.elements = new ArrayList<>();
     }
-
+    
     public List<T> findAll() {
         return elements;
     }

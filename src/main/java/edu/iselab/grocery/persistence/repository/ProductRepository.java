@@ -1,19 +1,10 @@
 package edu.iselab.grocery.persistence.repository;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import edu.iselab.grocery.persistence.model.Product;
 
-public class ProductRepository {
+public class ProductRepository extends AbstractRepository<Product> {
     
     private static ProductRepository instance;
-    
-    private List<Product> products;
-    
-    private ProductRepository() {
-        this.products = new ArrayList<>();
-    }
     
     public static ProductRepository getInstance() {
 
@@ -23,12 +14,5 @@ public class ProductRepository {
 
         return instance;
     }
-    
-    public List<Product> findAll(){
-        return products;
-    }
-
-    public void save(Product product) {
-        this.products.add(product);
-    }
+  
 }

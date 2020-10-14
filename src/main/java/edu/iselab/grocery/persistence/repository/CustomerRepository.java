@@ -6,10 +6,6 @@ public class CustomerRepository extends AbstractRepository<Customer> {
     
     private static CustomerRepository instance;
     
-    public CustomerRepository() {
-        
-    }
-    
     public static CustomerRepository getInstance() {
 
         if (instance == null) {
