@@ -29,10 +29,6 @@ public class Product extends AbstractModel {
         return description + "\t" + price;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }    
-    
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
