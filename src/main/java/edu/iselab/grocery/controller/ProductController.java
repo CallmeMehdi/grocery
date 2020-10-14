@@ -90,7 +90,7 @@ public class ProductController {
         ScannerUtils.pressEnterToContinue();
     }
     
-    public void add() {
+    protected void add() {
         
         System.out.println("───────────────");
         System.out.println("New Product");
