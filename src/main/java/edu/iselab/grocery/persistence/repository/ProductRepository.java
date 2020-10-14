@@ -17,4 +17,22 @@ public class ProductRepository extends AbstractRepository<Product> {
 
         return instance;
     }
+
+    public List<Product> findByDescription(String term) {
+
+        List<Product> found = new ArrayList<>();
+
+        if (term == null || term.isEmpty()) {
+            return found;
+        }
+
+        for (Product product : findAll()) {
+
+            if (product.getDescription().toLowerCase().contains(term.toLowerCase())) {
+                found.add(product);
+            }
+        }
+
+        return found;
+    }
 }

@@ -38,7 +38,7 @@ public class ProductController {
             System.out.println("───────────────");
             System.out.println("  1 - Add");
             System.out.println("  2 - Remove");
-            System.out.println("  3 - Search by Name");
+            System.out.println("  3 - Search by Description");
             System.out.println("  4 - List");
             System.out.println("  0 - Back");
             System.out.println("───────────────");
@@ -49,6 +49,9 @@ public class ProductController {
             switch (option) {
                 case 1:
                     add();
+                    break;
+                case 3:
+                    searchByDescription();
                     break;
                 case 4:
                     list();
@@ -61,12 +64,13 @@ public class ProductController {
         
     }
     
-    private void searchByName() {
+    private void searchByDescription() {
         
-        System.out.println("───────────────");
-        System.out.println("List of Products");
-        System.out.println("───────────────");
+        System.out.println("──────────────────────");
+        System.out.println("Search by Description");
+        System.out.println("──────────────────────");
         
+        System.out.print("Search for: ");
         String term = ScannerUtils.getString();
         
         List<Product> found = productRepository.findByDescription(term);
@@ -75,13 +79,14 @@ public class ProductController {
     }
     
     private void list() {
-        list(productRepository.findAll());
-    }
-    private void list(List<Product> products) {
         
         System.out.println("───────────────");
         System.out.println("List of Products");
         System.out.println("───────────────");
+        
+        list(productRepository.findAll());
+    }
+    private void list(List<Product> products) {
         
         AsciiTable table = new AsciiTable();
         
