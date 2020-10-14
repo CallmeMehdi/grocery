@@ -68,7 +68,7 @@ public class ProductController {
                     list();
                     break;
                 default:
-                    System.err.println("Invalid option. Please try again");
+                    System.err.println(" Invalid option. Please try again");
             }
             
         } while(option != 0);
@@ -109,7 +109,7 @@ public class ProductController {
         Product found = productRepository.findById(term);
 
         if (found == null) {
-            System.err.println(" Product not foud");
+            System.err.println(" Product not found");
         } else {
             list(Arrays.asList(found));
         }
