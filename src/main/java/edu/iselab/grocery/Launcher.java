@@ -15,14 +15,15 @@ public class Launcher {
             
             ConsoleUtils.clear();
             
-            System.out.println("───────────────");
-            System.out.println("Menu");
-            System.out.println("───────────────");
-            System.out.println("  1 - Customers");
-            System.out.println("  2 - Products");
-            System.out.println("  3 - Orders");
-            System.out.println("  0 - Quit");
-            System.out.println("───────────────");
+            ConsoleUtils.printRectangle("Main Menu");
+            
+            System.out.println(" 1 - Customers");
+            System.out.println(" 2 - Products");
+            System.out.println(" 3 - Orders");
+            System.out.println(" 0 - Quit");
+            
+            ConsoleUtils.printLine();
+            
             System.out.print("Option: ");
             
             option = ConsoleUtils.promptUserForAnInt();

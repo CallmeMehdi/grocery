@@ -36,16 +36,17 @@ public class ProductController {
             
             ConsoleUtils.clear();
             
-            System.out.println("───────────────");
-            System.out.println("Products");
-            System.out.println("───────────────");
+            ConsoleUtils.printRectangle("Products");
+            
             System.out.println("  1 - Add");
             System.out.println("  2 - Remove");
             System.out.println("  3 - Search by Id");
             System.out.println("  4 - Search by Description");
             System.out.println("  5 - List");
             System.out.println("  0 - Back");
-            System.out.println("───────────────");
+            
+            ConsoleUtils.printLine();
+            
             System.out.print("Option: ");
             
             option = ConsoleUtils.promptUserForAnInt();

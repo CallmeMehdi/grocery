@@ -9,8 +9,6 @@ import org.apache.commons.lang3.SystemUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 
 import de.vandermeer.asciitable.AsciiTable;
-import de.vandermeer.asciitable.CWC_LongestWordMax;
-import edu.iselab.grocery.persistence.model.Product;
 
 public class ConsoleUtils {
 
@@ -81,14 +79,26 @@ public class ConsoleUtils {
         
         AsciiTable table = new AsciiTable();
         
+        table.getContext().setWidth(50);
+        
         table.addRule();
         table.addRow(text);
         table.addRule();
         
-        table.getContext().setWidth(50);
-        table.getRenderer().setCWC(new CWC_LongestWordMax(50));
-        
         System.out.println(table.render());
+    }
+    
+    public static void printLine() {
+        printLine(50);
+    }
+    
+    public static void printLine(int size) {
+
+        for (int i = 0; i < size; i++) {
+            System.out.print("─");
+        }
+
+        System.out.println();
     }
 
 }
