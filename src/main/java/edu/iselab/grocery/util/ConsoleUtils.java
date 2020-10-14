@@ -92,7 +92,7 @@ public class ConsoleUtils {
         printLine(50);
     }
     
-    public static void printLine(int size) {
+    private static void printLine(int size) {
 
         for (int i = 0; i < size; i++) {
             System.out.print("─");
@@ -100,5 +100,4 @@ public class ConsoleUtils {
 
         System.out.println();
     }
-
 }
