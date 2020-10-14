@@ -187,12 +187,4 @@ public class ProductController {
             
         ConsoleUtils.pressEnterToContinue();
     }
-    
-    public String getBirthday() {
-        return "";
-    }
-
-    public void setBirthday(String birthday) {
-//        this.birthday = birthday;
-    }
 }
