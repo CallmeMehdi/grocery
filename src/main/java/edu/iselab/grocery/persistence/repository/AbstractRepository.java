@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.iselab.grocery.persistence.model.AbstractModel;
+import edu.iselab.grocery.util.IdUtils;
 
 public class AbstractRepository<T extends AbstractModel> {
 
@@ -20,6 +21,7 @@ public class AbstractRepository<T extends AbstractModel> {
 
     public void save(T element) {
         
+        element.setId(IdUtils.getNextId());
         element.setCreatedAt(LocalDateTime.now());
         
         this.elements.add(element);
