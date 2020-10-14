@@ -68,7 +68,7 @@ public class ProductController {
                     list();
                     break;
                 default:
-                    System.err.println("Invalid option. Please try again");
+                    System.err.println(" Invalid option. Please try again");
             }
             
         } while(option != 0);
@@ -84,7 +84,17 @@ public class ProductController {
         System.out.print(" Search for id: ");
         int id = ConsoleUtils.promptUserForAnInt();
 
-        productRepository.removeById(id);
+        Product removed = productRepository.removeById(id);
+        
+        System.out.println();
+        
+        if (removed == null) {
+            System.err.println(" Product not foud");
+        } else {
+            System.out.println(" Successfully removed");
+        }
+            
+        ConsoleUtils.pressEnterToContinue();
     }
     
     public void searchById() {
@@ -99,7 +109,7 @@ public class ProductController {
         Product found = productRepository.findById(term);
 
         if (found == null) {
-            System.err.println(" Product not foud");
+            System.err.println(" Product not found");
         } else {
             list(Arrays.asList(found));
         }
@@ -170,5 +180,10 @@ public class ProductController {
         product.setPrice(ConsoleUtils.promptUserForADouble());
         
         productRepository.save(product);
+        
+        System.out.println();
+        System.out.println(" Successfully added");
+            
+        ConsoleUtils.pressEnterToContinue();
     }
 }
