@@ -1,5 +1,6 @@
 package edu.iselab.grocery.persistence.repository;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class AbstractRepository<T extends AbstractModel> {
 
     public void save(T element) {
         
-        
+        element.setCreatedAt(LocalDateTime.now());
         
         this.elements.add(element);
     }
