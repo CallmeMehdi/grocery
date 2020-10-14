@@ -17,8 +17,11 @@ public class AbstractRepository<T extends AbstractModel> {
         return elements;
     }
 
-    public void save(T product) {
-        this.elements.add(product);
+    public void save(T element) {
+        
+        
+        
+        this.elements.add(element);
     }
     
     public T findById(int id) {
