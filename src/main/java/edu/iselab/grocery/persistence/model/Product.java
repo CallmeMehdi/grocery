@@ -2,7 +2,7 @@ package edu.iselab.grocery.persistence.model;
 
 public class Product {
     
-    private String id;
+    public String id;
     
     private String description;
 
