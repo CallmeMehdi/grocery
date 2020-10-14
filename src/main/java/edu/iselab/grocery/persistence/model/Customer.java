@@ -8,7 +8,7 @@ public class Customer extends AbstractModel {
     
     private String birthday;
     
-    protected String address;
+    private String address;
     
     public String getFullName() {
         return fullName;
@@ -32,5 +32,13 @@ public class Customer extends AbstractModel {
 
     public void setBirthday(String birthday) {
         this.birthday = birthday;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
