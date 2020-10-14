@@ -43,6 +43,9 @@ public class ProductController {
             option = ScannerUtils.getInt();
             
             switch (option) {
+                case 1:
+                    add();
+                    break;
                 case 4:
                     list();
                     break;
@@ -56,13 +59,25 @@ public class ProductController {
     
     public void list() {
         
-        System.out.println("Description");
+        System.out.println("Description \t Price");
         
         for(Product product : productRepository.findAll()) {
             System.out.println(product);
         }
     }
     
+    public void add() {
+        
+        Product product = new Product();
+        
+        System.out.print("Description: ");
+        product.setDescription(ScannerUtils.getString());
+        
+        System.out.print("Price: ");
+        product.setPrice(ScannerUtils.getDouble());
+        
+        productRepository.save(product);
+    }
     
     
     

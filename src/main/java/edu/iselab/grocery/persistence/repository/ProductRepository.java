@@ -27,4 +27,8 @@ public class ProductRepository {
     public List<Product> findAll(){
         return products;
     }
+
+    public void save(Product product) {
+        this.products.add(product);
+    }
 }
