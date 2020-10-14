@@ -145,9 +145,7 @@ public class ProductController {
         
         ConsoleUtils.clear();
         
-        System.out.println("───────────────");
-        System.out.println("New Product");
-        System.out.println("───────────────");
+        ConsoleUtils.printRectangle("New Product");
         
         Product product = new Product();
         
