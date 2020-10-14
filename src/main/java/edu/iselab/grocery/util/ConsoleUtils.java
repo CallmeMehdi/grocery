@@ -25,6 +25,17 @@ public class ConsoleUtils {
         return str;
     }
     
+    public static String promptUserForANotBlankString() {
+
+        String str = getString();
+
+        while (str == null || str.trim().isEmpty()) {
+            str = getString();
+        }
+
+        return str;
+    }
+    
     public static int promptUserForAnInt() {
 
         String str = getString();

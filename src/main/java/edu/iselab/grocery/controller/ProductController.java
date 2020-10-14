@@ -97,7 +97,7 @@ public class ProductController {
         ConsoleUtils.printRectangle("Search by Description");
         
         System.out.print("Search for: ");
-        String term = ConsoleUtils.promptUserForAString();
+        String term = ConsoleUtils.promptUserForANotBlankString();
         
         List<Product> found = productRepository.findByDescription(term);
         
@@ -152,7 +152,7 @@ public class ProductController {
         Product product = new Product();
         
         System.out.print("Description: ");
-        product.setDescription(ConsoleUtils.getString());
+        product.setDescription(ConsoleUtils.promptUserForANotBlankString());
         
         System.out.print("Price: ");
         product.setPrice(ConsoleUtils.promptUserForADouble());
