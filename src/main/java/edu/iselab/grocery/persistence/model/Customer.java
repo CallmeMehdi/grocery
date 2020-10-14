@@ -22,5 +22,5 @@ public class Customer extends AbstractModel {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
-    }
+    }    
 }
