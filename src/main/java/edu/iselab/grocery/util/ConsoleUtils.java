@@ -58,7 +58,7 @@ public class ConsoleUtils {
         }
     }
     
-    public final static void clearConsole() {
+    public final static void clear() {
         
         try {
             
@@ -67,6 +67,7 @@ public class ConsoleUtils {
             } else if (SystemUtils.IS_OS_MAC) {
                 new ProcessBuilder("clear").inheritIO().start().waitFor();
             }
+            
         } catch (final Exception e) {
             // Handle any exceptions.
         }
