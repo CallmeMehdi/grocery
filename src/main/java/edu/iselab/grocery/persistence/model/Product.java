@@ -1,7 +1,7 @@
 package edu.iselab.grocery.persistence.model;
 
-public class Product {
-    
+public class Product extends AbstractModel {
+
     private String description;
 
     public String getDescription() {
