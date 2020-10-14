@@ -59,7 +59,7 @@ public class ProductController {
         
     }
     
-    protected void list() {
+    private void list() {
         
         System.out.println("───────────────");
         System.out.println("List of Products");
@@ -90,7 +90,7 @@ public class ProductController {
         ScannerUtils.pressEnterToContinue();
     }
     
-    protected void add() {
+    private void add() {
         
         System.out.println("───────────────");
         System.out.println("New Product");
