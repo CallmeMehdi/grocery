@@ -30,4 +30,8 @@ public class Product extends AbstractModel {
     public String toString() {
         return description + "\t" + price;
     }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }    
 }
