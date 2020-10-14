@@ -8,10 +8,8 @@ public class Customer extends AbstractModel {
     
     private String birthday;
     
-    private String address;
-    
-    protected String city;
-    
+    protected Address address = new Address();
+
     public String getFullName() {
         return fullName;
     }
@@ -34,21 +32,5 @@ public class Customer extends AbstractModel {
 
     public void setBirthday(String birthday) {
         this.birthday = birthday;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
+    }    
 }
