@@ -1,10 +1,14 @@
 package edu.iselab.grocery.persistence.model;
 
+import java.time.LocalDateTime;
+
 public class Product extends AbstractModel {
 
     private String description;
     
     private double price;
+    
+    public LocalDateTime createdAt;
 
     public String getDescription() {
         return description;
