@@ -60,13 +60,12 @@ public class ProductController {
     public void list() {
         
         System.out.println("Description \t Price");
-        
+        System.out.println("---------------------");
         for(Product product : productRepository.findAll()) {
             System.out.println(product);
         }
         
-        System.out.println("Press ENTER to continue...");
-        ScannerUtils.getString();
+        ScannerUtils.pressEnterToContinue();
     }
     
     public void add() {
