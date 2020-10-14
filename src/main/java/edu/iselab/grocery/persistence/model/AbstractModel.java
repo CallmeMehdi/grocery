@@ -1,20 +1,26 @@
 package edu.iselab.grocery.persistence.model;
 
-import edu.iselab.grocery.util.IdUtils;
+import java.time.LocalDateTime;
 
 public abstract class AbstractModel {
 
-    public int id;
+    protected int id;
     
-    public AbstractModel() {
-        this.id = IdUtils.getNextId();
-    }
-
+    protected LocalDateTime createdAt;
+    
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+    
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }  
+    
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 }

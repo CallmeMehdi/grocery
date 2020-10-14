@@ -143,7 +143,7 @@ public class ProductController {
         AsciiTable table = new AsciiTable();
         
         table.addRule();
-        table.addRow("Id","Description","Price");
+        table.addRow("Id","Description","Price", "Created At");
                 
         for (Product product : products) {
             
@@ -151,7 +151,8 @@ public class ProductController {
             table.addRow(
                 product.getId(), 
                 product.getDescription(), 
-                product.getPrice()
+                product.getPrice(),
+                product.getCreatedAt()
             );
         }
         

@@ -5,7 +5,7 @@ public class Product extends AbstractModel {
     private String description;
     
     private double price;
-
+    
     public String getDescription() {
         return description;
     }
@@ -25,5 +25,5 @@ public class Product extends AbstractModel {
     @Override
     public String toString() {
         return description + "\t" + price;
-    }
+    }    
 }
