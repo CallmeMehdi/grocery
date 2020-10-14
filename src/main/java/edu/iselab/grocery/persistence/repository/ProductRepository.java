@@ -35,16 +35,4 @@ public class ProductRepository extends AbstractRepository<Product> {
 
         return found;
     }
-    
-    public Product findById(int id) {
-
-        for (Product product : findAll()) {
-
-            if (product.getId() == id) {
-                return product;
-            }
-        }
-
-        return null;
-    }
 }

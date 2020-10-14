@@ -7,7 +7,7 @@ import de.vandermeer.asciitable.AsciiTable;
 import de.vandermeer.asciitable.CWC_LongestWordMax;
 import edu.iselab.grocery.persistence.model.Product;
 import edu.iselab.grocery.persistence.repository.ProductRepository;
-import edu.iselab.grocery.util.ScannerUtils;
+import edu.iselab.grocery.util.ConsoleUtils;
 
 public class ProductController {
     
@@ -34,23 +34,29 @@ public class ProductController {
         
         do {
             
-            System.out.println("───────────────");
-            System.out.println("Products");
-            System.out.println("───────────────");
-            System.out.println("  1 - Add");
-            System.out.println("  2 - Remove");
-            System.out.println("  3 - Search by Id");
-            System.out.println("  4 - Search by Description");
-            System.out.println("  5 - List");
-            System.out.println("  0 - Back");
-            System.out.println("───────────────");
-            System.out.print("Option: ");
+            ConsoleUtils.clear();
             
-            option = ScannerUtils.getInt();
+            ConsoleUtils.printRectangle("Products");
+            
+            System.out.println(" 1 - Add");
+            System.out.println(" 2 - Remove");
+            System.out.println(" 3 - Search by Id");
+            System.out.println(" 4 - Search by Description");
+            System.out.println(" 5 - List");
+            System.out.println(" 0 - Back");
+            
+            ConsoleUtils.printLine();
+            
+            System.out.print(" Option: ");
+            
+            option = ConsoleUtils.promptUserForAnInt();
             
             switch (option) {
                 case 1:
                     add();
+                    break;
+                case 2:
+                    remove();
                     break;
                 case 3:
                     searchById();
@@ -69,19 +75,31 @@ public class ProductController {
         
     }
     
+    public void remove() {
+
+        ConsoleUtils.clear();
+        
+        ConsoleUtils.printRectangle("Remove");
+        
+        System.out.print(" Search for id: ");
+        int id = ConsoleUtils.promptUserForAnInt();
+
+        productRepository.removeById(id);
+    }
+    
     public void searchById() {
 
-        System.out.println("──────────────────────");
-        System.out.println("Search by Id");
-        System.out.println("──────────────────────");
-
-        System.out.print("Id: ");
-        int term = ScannerUtils.getInt();
+        ConsoleUtils.clear();
+        
+        ConsoleUtils.printRectangle("Search by Id");
+        
+        System.out.print(" Search for: ");
+        int term = ConsoleUtils.promptUserForAnInt();
 
         Product found = productRepository.findById(term);
 
         if (found == null) {
-            System.err.println("Product not foud");
+            System.err.println(" Product not foud");
         } else {
             list(Arrays.asList(found));
         }
@@ -89,12 +107,12 @@ public class ProductController {
     
     private void searchByDescription() {
         
-        System.out.println("──────────────────────");
-        System.out.println("Search by Description");
-        System.out.println("──────────────────────");
+        ConsoleUtils.clear();
         
-        System.out.print("Search for: ");
-        String term = ScannerUtils.getString();
+        ConsoleUtils.printRectangle("Search by Description");
+        
+        System.out.print(" Search for: ");
+        String term = ConsoleUtils.promptUserForANotBlankString();
         
         List<Product> found = productRepository.findByDescription(term);
         
@@ -103,12 +121,13 @@ public class ProductController {
     
     private void list() {
         
-        System.out.println("───────────────");
-        System.out.println("List of Products");
-        System.out.println("───────────────");
+        ConsoleUtils.clear();
+        
+        ConsoleUtils.printRectangle("List of Products");
         
         list(productRepository.findAll());
     }
+    
     private void list(List<Product> products) {
         
         AsciiTable table = new AsciiTable();
@@ -133,22 +152,22 @@ public class ProductController {
         
         System.out.println(table.render());
         
-        ScannerUtils.pressEnterToContinue();
+        ConsoleUtils.pressEnterToContinue();
     }
     
     private void add() {
         
-        System.out.println("───────────────");
-        System.out.println("New Product");
-        System.out.println("───────────────");
+        ConsoleUtils.clear();
+        
+        ConsoleUtils.printRectangle("New Product");
         
         Product product = new Product();
         
-        System.out.print("Description: ");
-        product.setDescription(ScannerUtils.getString());
+        System.out.print(" Description: ");
+        product.setDescription(ConsoleUtils.promptUserForANotBlankString());
         
-        System.out.print("Price: ");
-        product.setPrice(ScannerUtils.getDouble());
+        System.out.print(" Price: ");
+        product.setPrice(ConsoleUtils.promptUserForADouble());
         
         productRepository.save(product);
     }

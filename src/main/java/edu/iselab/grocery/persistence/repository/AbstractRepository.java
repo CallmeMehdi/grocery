@@ -32,4 +32,15 @@ public class AbstractRepository<T extends AbstractModel> {
 
         return null;
     }
+    
+    public T removeById(int id) {
+
+        T found = findById(id);
+
+        if (found != null) {
+            elements.remove(found);
+        }
+
+        return found;
+    }
 }
