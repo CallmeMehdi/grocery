@@ -4,7 +4,7 @@ public class Customer extends AbstractModel {
 
     private String fullName;
     
-    protected String phoneNumber;
+    private String phoneNumber;
 
     public String getFullName() {
         return fullName;
