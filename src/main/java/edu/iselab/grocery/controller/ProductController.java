@@ -59,7 +59,7 @@ public class ProductController {
         
     }
     
-    public void list() {
+    protected void list() {
         
         System.out.println("───────────────");
         System.out.println("List of Products");
