@@ -6,7 +6,7 @@ import edu.iselab.grocery.util.IdUtils;
 
 public abstract class AbstractModel {
 
-    public int id;
+    protected int id;
     
     protected LocalDateTime createdAt;
     
