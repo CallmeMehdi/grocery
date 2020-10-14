@@ -13,8 +13,6 @@ public class ProductController {
     
     private static ProductController instance;
     
-    private String birthday;
-    
     public ProductRepository productRepository; 
     
     private ProductController() {
