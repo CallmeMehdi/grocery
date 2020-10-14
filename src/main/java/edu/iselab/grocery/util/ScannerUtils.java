@@ -9,16 +9,15 @@ import org.apache.commons.lang3.math.NumberUtils;
 
 public class ScannerUtils {
 
-    private static Scanner scanner = new Scanner(System.in);
-
+    private static Scanner scan = new Scanner(System.in);
+    
     public static String getString() {
-        return scanner.next();
+        
+        String str = scan.nextLine();
+        
+        return str;
     }
     
-    public static void nextLine() {
-        scanner.nextLine();
-    }
-
     public static int getInt() {
 
         String str = getString();

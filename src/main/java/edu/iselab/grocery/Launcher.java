@@ -13,14 +13,14 @@ public class Launcher {
         
         do {
             
-            System.out.println("-------------");
+            System.out.println("───────────────");
             System.out.println("Menu");
-            System.out.println("-------------");
+            System.out.println("───────────────");
             System.out.println("  1 - Customers");
             System.out.println("  2 - Products");
             System.out.println("  3 - Orders");
             System.out.println("  0 - Quit");
-            System.out.println("-------------");
+            System.out.println("───────────────");
             System.out.print("Option: ");
             
             option = ScannerUtils.getInt();
