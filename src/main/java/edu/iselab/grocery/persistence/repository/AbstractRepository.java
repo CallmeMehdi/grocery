@@ -3,7 +3,9 @@ package edu.iselab.grocery.persistence.repository;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AbstractRepository<T> {
+import edu.iselab.grocery.persistence.model.AbstractModel;
+
+public class AbstractRepository<T extends AbstractModel> {
 
     private List<T> elements;
 
@@ -17,5 +19,17 @@ public class AbstractRepository<T> {
 
     public void save(T product) {
         this.elements.add(product);
+    }
+    
+    public T findById(int id) {
+
+        for (T product : findAll()) {
+
+            if (product.getId() == id) {
+                return product;
+            }
+        }
+
+        return null;
     }
 }
