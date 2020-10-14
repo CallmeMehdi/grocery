@@ -8,6 +8,8 @@ public abstract class AbstractModel {
     
     protected LocalDateTime createdAt;
     
+    private String address;
+    
     public int getId() {
         return id;
     }
