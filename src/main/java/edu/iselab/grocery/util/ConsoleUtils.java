@@ -18,6 +18,13 @@ public class ConsoleUtils {
         return scan.nextLine();
     }
     
+    public static String promptUserForAString() {
+
+        String str = getString();
+
+        return str;
+    }
+    
     public static int promptUserForAnInt() {
 
         String str = getString();
