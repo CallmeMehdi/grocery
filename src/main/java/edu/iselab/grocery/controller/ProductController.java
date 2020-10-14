@@ -38,12 +38,12 @@ public class ProductController {
             
             ConsoleUtils.printRectangle("Products");
             
-            System.out.println("  1 - Add");
-            System.out.println("  2 - Remove");
-            System.out.println("  3 - Search by Id");
-            System.out.println("  4 - Search by Description");
-            System.out.println("  5 - List");
-            System.out.println("  0 - Back");
+            System.out.println(" 1 - Add");
+            System.out.println(" 2 - Remove");
+            System.out.println(" 3 - Search by Id");
+            System.out.println(" 4 - Search by Description");
+            System.out.println(" 5 - List");
+            System.out.println(" 0 - Back");
             
             ConsoleUtils.printLine();
             
@@ -76,11 +76,9 @@ public class ProductController {
 
         ConsoleUtils.clear();
         
-        System.out.println("──────────────────────");
-        System.out.println("Search by Id");
-        System.out.println("──────────────────────");
-
-        System.out.print("Id: ");
+        ConsoleUtils.printRectangle("Search by Id");
+        
+        System.out.print("Search for: ");
         int term = ConsoleUtils.promptUserForAnInt();
 
         Product found = productRepository.findById(term);
@@ -96,9 +94,7 @@ public class ProductController {
         
         ConsoleUtils.clear();
         
-        System.out.println("──────────────────────");
-        System.out.println("Search by Description");
-        System.out.println("──────────────────────");
+        ConsoleUtils.printRectangle("Search by Description");
         
         System.out.print("Search for: ");
         String term = ConsoleUtils.getString();
@@ -112,9 +108,7 @@ public class ProductController {
         
         ConsoleUtils.clear();
         
-        System.out.println("───────────────");
-        System.out.println("List of Products");
-        System.out.println("───────────────");
+        ConsoleUtils.printRectangle("List of Products");
         
         list(productRepository.findAll());
     }
