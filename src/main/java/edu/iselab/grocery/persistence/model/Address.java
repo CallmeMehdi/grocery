@@ -5,6 +5,8 @@ public class Address {
     private String address;
 
     private String city;
+    
+    protected String publicField;
 
     public String getAddress() {
         return address;
