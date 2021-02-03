@@ -1,1 +1,1 @@
-EncapsulateField(edu.iselab.grocery.persistence.model.Address;;[publicField];[])
+IncreaseFieldSecurity(edu.iselab.grocery.persistence.model.Address;;[protectedField];[];[])
