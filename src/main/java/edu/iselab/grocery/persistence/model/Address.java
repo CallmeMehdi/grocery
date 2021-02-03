@@ -7,6 +7,8 @@ public class Address {
     private String city;
     
     public String publicField;
+    
+    protected String protectedField;
 
     public String getAddress() {
         return address;
@@ -22,5 +24,9 @@ public class Address {
 
     public void setCity(String city) {
         this.city = city;
+    }
+    
+    protected void protectedMethod() {
+        
     }
 }
