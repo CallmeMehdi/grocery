@@ -6,7 +6,7 @@ public class Address {
 
     private String city;
     
-    protected String publicField;
+    public String publicField;
 
     public String getAddress() {
         return address;
