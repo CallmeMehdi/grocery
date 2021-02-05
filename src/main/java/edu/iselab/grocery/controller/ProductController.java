@@ -151,7 +151,7 @@ public class ProductController {
             table.addRow(
                 product.getId(), 
                 product.getDescription(), 
-                product.getPrice(),
+                product.price,
                 product.getCreatedAt()
             );
         }
@@ -178,7 +178,7 @@ public class ProductController {
         product.setDescription(ConsoleUtils.promptUserForANotBlankString());
         
         System.out.print(" Price: ");
-        product.setPrice(ConsoleUtils.promptUserForADouble());
+        product.price = ConsoleUtils.promptUserForADouble();
         
         productRepository.save(product);
         

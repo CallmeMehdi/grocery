@@ -4,7 +4,7 @@ public class Product extends AbstractModel {
 
     private String description;
     
-    private double price;
+    public double price;
     
     public String getDescription() {
         return description;
@@ -12,14 +12,6 @@ public class Product extends AbstractModel {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     @Override
