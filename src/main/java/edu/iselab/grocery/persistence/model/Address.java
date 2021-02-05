@@ -2,11 +2,6 @@ package edu.iselab.grocery.persistence.model;
 
 public class Address {
     
-    public class Telephone{
-        
-        public int code;
-    }
-
     private String address;
 
     private String city;
