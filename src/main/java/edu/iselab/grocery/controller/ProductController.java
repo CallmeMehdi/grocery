@@ -179,6 +179,7 @@ public class ProductController {
         
         System.out.print(" Price: ");
         product.price = ConsoleUtils.promptUserForADouble();
+        product.amount = 1;
         
         productRepository.save(product);
         
