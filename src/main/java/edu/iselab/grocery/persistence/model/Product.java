@@ -6,6 +6,8 @@ public class Product extends AbstractModel {
     
     public double price;
     
+    public int amount;
+    
     public String getDescription() {
         return description;
     }
