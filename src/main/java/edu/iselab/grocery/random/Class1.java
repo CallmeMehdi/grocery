@@ -9,11 +9,19 @@ public class Class1 {
         private Product p;
     }
     
+    public class InnerClass2 {
+        
+        private InnerClass inner;
+    }
+    
     private InnerClass inner;
+    
+    private InnerClass2 inner2;
     
     public void execute() {
         
         inner.p.price = 2.3;
+        inner2.inner.p.price = 4.5;
     }
 
 }
