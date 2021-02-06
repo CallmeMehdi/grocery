@@ -4,11 +4,16 @@ import edu.iselab.grocery.persistence.model.Product;
 
 public class Class1 {
     
-    private Product p;
+    public class InnerClass{
+        
+        private Product p;
+    }
+    
+    private InnerClass inner;
     
     public void execute() {
         
-        p.price = 2.3;
+        inner.p.price = 2.3;
     }
 
 }
