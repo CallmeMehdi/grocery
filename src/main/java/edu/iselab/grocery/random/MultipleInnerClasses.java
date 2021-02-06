@@ -15,7 +15,10 @@ public class MultipleInnerClasses {
         private FirstInnerClass inner;
         
         public void execute() {
+            
             inner.p.price = 2.3;
+            
+            System.out.println(inner.p.price);
         }
     }
     
@@ -27,6 +30,8 @@ public class MultipleInnerClasses {
         
         firstInner.p.price = 2.3;
         secondInner.inner.p.price = ConsoleUtils.promptUserForADouble();
+        
+        System.out.println(secondInner.inner.p.price);
     }
 
 }
