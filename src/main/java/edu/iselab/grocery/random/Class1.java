@@ -8,7 +8,7 @@ public class Class1 {
     
     public void execute() {
         
-        p.price = 2;
+        p.price = 2.3;
     }
 
 }
