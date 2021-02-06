@@ -27,6 +27,6 @@ public class Address {
     }
     
     protected void protectedMethod() {
-        
+        System.out.println(publicField);
     }
 }
