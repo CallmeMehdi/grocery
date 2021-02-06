@@ -13,6 +13,10 @@ public class MultipleInnerClasses {
     public class SecondInnerClass {
         
         private FirstInnerClass inner;
+        
+        public void execute() {
+            inner.p.price = 2.3;
+        }
     }
     
     private FirstInnerClass firstInner;
