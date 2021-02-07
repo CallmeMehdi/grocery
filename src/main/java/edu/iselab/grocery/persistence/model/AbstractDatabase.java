@@ -1,5 +1,5 @@
 package edu.iselab.grocery.persistence.model;
 
-public class AbstractDatabase {
+public abstract class AbstractDatabase {
 
 }
