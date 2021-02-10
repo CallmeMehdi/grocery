@@ -10,8 +10,6 @@ public class Customer extends AbstractModel {
     
     private String birthday;
     
-    
-    
     protected Address address = new Address();
 
     public String getFullName() {
