@@ -3,10 +3,14 @@ package edu.iselab.grocery.persistence.model;
 public class Customer extends AbstractModel {
 
     private String fullName;
+
+    protected String secondName;
     
     private String phoneNumber;
     
     private String birthday;
+    
+    
     
     protected Address address = new Address();
 
@@ -33,4 +37,8 @@ public class Customer extends AbstractModel {
     public void setBirthday(String birthday) {
         this.birthday = birthday;
     }    
+    
+    public String getsnm() {
+        return secondName;
+    }
 }
