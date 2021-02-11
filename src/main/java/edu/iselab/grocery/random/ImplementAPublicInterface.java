@@ -2,9 +2,14 @@ package edu.iselab.grocery.random;
 
 public class ImplementAPublicInterface implements PublicInterface {
 
-    @Override
     public void getNsm() {
-        // TODO Auto-generated method stub
-        // Do nothing;
+        System.out.println("Hello");
+    }
+
+    public int getS(int a, int b) {
+           
+        int sum = a + b;
+        
+        return sum;
     }
 }

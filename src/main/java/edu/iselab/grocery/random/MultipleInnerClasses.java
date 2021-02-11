@@ -32,6 +32,12 @@ public class MultipleInnerClasses {
         secondInner.inner.p.price = ConsoleUtils.promptUserForADouble();
         
         System.out.println(secondInner.inner.p.price);
+        
+        ImplementAPublicInterface a = new ImplementAPublicInterface();
+        
+        a.getNsm();
+        
+        System.out.println(a.getS(2, 3));
     }
 
 }
