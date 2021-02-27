@@ -1,19 +1,41 @@
 package edu.iselab.grocery.controller;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import org.apache.commons.lang3.exception.CloneFailedException;
 
 import de.vandermeer.asciitable.AsciiTable;
 import de.vandermeer.asciitable.CWC_LongestWordMax;
 import edu.iselab.grocery.persistence.model.Product;
 import edu.iselab.grocery.persistence.repository.ProductRepository;
 import edu.iselab.grocery.util.ConsoleUtils;
+import java.util.Collections;
 
 public class ProductController {
     
     private static ProductController instance;
     
     public ProductRepository productRepository; 
+    
+    protected CloneFailedException exception;
+    
+    protected List<String> listCollections;
+    
+    protected Map<String, CloneFailedException> mapCollections;
+    
+    protected Set<String> setCollections;
+    
+    protected HashMap<String, String> hashMapCollections;
+    
+    protected HashSet<String> hashSetCollections;
+    
+    protected ArrayList<String> arrayListCollections;
     
     private ProductController() {
         productRepository = ProductRepository.getInstance();
