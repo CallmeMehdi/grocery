@@ -1,5 +1,7 @@
 package edu.iselab.grocery.controller;
 
+import org.apache.commons.lang3.exception.CloneFailedException;
+
 import edu.iselab.grocery.persistence.model.Customer;
 import edu.iselab.grocery.random.ImplementAPublicInterface;
 
@@ -8,6 +10,12 @@ public class CustomerController {
     private static CustomerController instance;
     
     private ImplementAPublicInterface pub = new ImplementAPublicInterface();
+    
+    private String[] names;
+    
+    private CloneNotSupportedException[] exceptions;
+    
+    private CloneFailedException[] clones;
     
     public static CustomerController getInstance() {
 
