@@ -12,10 +12,12 @@ import org.apache.commons.lang3.exception.CloneFailedException;
 
 import de.vandermeer.asciitable.AsciiTable;
 import de.vandermeer.asciitable.CWC_LongestWordMax;
+import edu.iselab.grocery.persistence.model.AbstractDatabase;
+import edu.iselab.grocery.persistence.model.Address;
+import edu.iselab.grocery.persistence.model.Customer;
 import edu.iselab.grocery.persistence.model.Product;
 import edu.iselab.grocery.persistence.repository.ProductRepository;
 import edu.iselab.grocery.util.ConsoleUtils;
-import java.util.Collections;
 
 public class ProductController {
     
@@ -209,5 +211,25 @@ public class ProductController {
         System.out.println(" Successfully added");
             
         ConsoleUtils.pressEnterToContinue();
+    }
+    
+    protected void randomMethod(int a, int b, int c) {
+        
+    }
+    
+    protected void randomMethod(String s1, String s2) {
+        
+    }
+    
+    protected void randomMethod(String s1, List<String> s2, Map<String, String> s3) {
+        
+    }
+    
+    protected void randomMethod(ProductController p1, AbstractDatabase ab, Address a) {
+        
+    }
+    
+    protected void randomMethod(Customer c, AbstractDatabase ab, Address a) {
+        
     }
 }
