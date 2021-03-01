@@ -232,4 +232,8 @@ public class ProductController {
     protected void randomMethod(Customer c, AbstractDatabase ab, Address a) {
         
     }
+    
+    protected void randomMethod(CloneFailedException ex) {
+        
+    }
 }
