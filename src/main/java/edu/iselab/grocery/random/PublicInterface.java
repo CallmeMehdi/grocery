@@ -1,6 +1,6 @@
 package edu.iselab.grocery.random;
 
-public interface PublicInterface {
+public interface PublicInterface extends ParentPublicInteraface{
 
     /** Just a method with a random name */
     public void getNsm();
