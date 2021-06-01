@@ -1,8 +1,8 @@
-package edu.iselab.grocery.comparator;
+package edu.iselab.grocery.features.manageproducts;
 
 import java.util.Comparator;
 
-import edu.iselab.grocery.persistence.model.Product;
+import edu.iselab.grocery.features.manageproducts.Product;
 
 public class ProductComparator implements Comparator<Product> {
 

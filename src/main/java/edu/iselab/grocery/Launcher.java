@@ -1,43 +1,38 @@
 package edu.iselab.grocery;
 
-import edu.iselab.grocery.controller.ProductController;
+import edu.iselab.grocery.features.manageproducts.ProductController;
 import edu.iselab.grocery.util.ConsoleUtils;
 
 public class Launcher {
-    
-    public static ProductController productController = ProductController.getInstance();
 
     public static void main(String[] args) {
 
-        int option = 0;
-        
+        int selectedOption = 0;
+
         do {
-            
-            ConsoleUtils.clear();
-            
-            ConsoleUtils.printRectangle("Main Menu");
-            
-            System.out.println(" 1 - Customers");
-            System.out.println(" 2 - Products");
-            System.out.println(" 3 - Orders");
-            System.out.println(" 0 - Quit");
-            
+
+            ConsoleUtils.clearConsole();
+
+            ConsoleUtils.printHeader("Grocery by ISE Lab", "An example of a grocery store system for academic purpose");
+            ConsoleUtils.println("Menu:");
+            ConsoleUtils.println("1 - Products");
+            ConsoleUtils.println("0 - Quit");
             ConsoleUtils.printLine();
-            
-            System.out.print(" Option: ");
-            
-            option = ConsoleUtils.promptUserForAnInt();
-            
-            switch (option) {
-                case 2:
-                    productController.start();
+            ConsoleUtils.println("Option: ");
+
+            selectedOption = ConsoleUtils.promptUserForAnInt();
+
+            switch (selectedOption) {
+                case 1:
+                    ProductController.getInstance().start();
+                    break;
+                case 0:
+                    ConsoleUtils.println("Bye!");
                     break;
                 default:
-                    System.err.println("Invalid option. Please try again");
+                    ConsoleUtils.printError("Invalid option. Please try again");
             }
-            
-        } while(option != 0);
-        
-        System.out.println("Bye!");
+
+        } while(selectedOption != 0);
     }
 }

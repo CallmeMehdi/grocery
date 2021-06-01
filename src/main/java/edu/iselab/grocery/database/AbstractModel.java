@@ -1,18 +1,22 @@
-package edu.iselab.grocery.persistence.model;
+package edu.iselab.grocery.database;
 
 import java.time.LocalDateTime;
 
-public abstract class AbstractModel extends AbstractDatabase {
+public abstract class AbstractModel {
 
-    protected int id;
+    public static long ID_COUNTER = 1;
+
+    protected Long id;
 
     protected LocalDateTime createdAt;
 
-    public int getId() {
+    public LocalDateTime lastModifiedDate;
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
