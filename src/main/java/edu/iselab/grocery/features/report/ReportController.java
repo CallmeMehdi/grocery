@@ -38,7 +38,7 @@ public class ReportController {
 
             switch (option) {
                 case 1:
-                    simpleReport();
+                    new SingleReportService().execute();
                     break;
                 case 2:
                     fullReport();
@@ -51,20 +51,7 @@ public class ReportController {
         }
     }
 
-    public void simpleReport(){
 
-        List<Cart> carts = cartRepository.findAll();
-
-        double total = 0.0;
-
-        for(Cart cart : carts){
-            total += cart.getTotal();
-        }
-
-        ConsoleUtils.printTable(carts, "Id", "Total");
-        ConsoleUtils.printLine();
-        ConsoleUtils.println("Total: " + total);
-    }
 
     public void fullReport(){
 
