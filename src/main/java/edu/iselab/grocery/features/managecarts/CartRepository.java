@@ -1,4 +1,4 @@
-package edu.iselab.grocery.features.manageorders;
+package edu.iselab.grocery.features.managecarts;
 
 import edu.iselab.grocery.database.AbstractDatabase;
 import edu.iselab.grocery.database.SQLDatabase;
@@ -8,14 +8,14 @@ import org.hibernate.Session;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
-public class OrderRepository extends AbstractDatabase<Cart> {
+public class CartRepository extends AbstractDatabase<Cart> {
 
-    private static OrderRepository instance;
+    private static CartRepository instance;
 
-    public static OrderRepository getInstance() {
+    public static CartRepository getInstance() {
 
         if (instance == null) {
-            instance = new OrderRepository();
+            instance = new CartRepository();
         }
 
         return instance;

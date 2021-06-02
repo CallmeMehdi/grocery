@@ -1,8 +1,9 @@
 package edu.iselab.grocery;
 
 import edu.iselab.grocery.database.SQLDatabase;
-import edu.iselab.grocery.features.manageorders.OrderController;
+import edu.iselab.grocery.features.managecarts.CartController;
 import edu.iselab.grocery.features.manageproducts.ProductController;
+import edu.iselab.grocery.features.report.ReportController;
 import edu.iselab.grocery.util.ConsoleUtils;
 
 public class Launcher {
@@ -19,6 +20,7 @@ public class Launcher {
             ConsoleUtils.println("Menu:");
             ConsoleUtils.println("1 - Products");
             ConsoleUtils.println("2 - Orders");
+            ConsoleUtils.println("3 - Reports");
             ConsoleUtils.println("0 - Quit");
             ConsoleUtils.printLine();
 
@@ -29,7 +31,10 @@ public class Launcher {
                     ProductController.getInstance().start();
                     break;
                 case 2:
-                    OrderController.getInstance().start();
+                    CartController.getInstance().start();
+                    break;
+                case 3:
+                   ReportController.getInstance().start();
                     break;
                 case 0:
                     quit();

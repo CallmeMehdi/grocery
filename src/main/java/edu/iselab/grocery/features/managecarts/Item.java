@@ -1,4 +1,4 @@
-package edu.iselab.grocery.features.manageorders;
+package edu.iselab.grocery.features.managecarts;
 
 import javax.persistence.*;
 
@@ -14,6 +14,8 @@ public class Item {
     private Cart order;
 
     private Long productId;
+
+    public String productName;
 
     protected double value;
 
@@ -57,5 +59,10 @@ public class Item {
 
     public void setAmount(int amount) {
         this.amount = amount;
+    }
+
+    @Override
+    public String toString() {
+        return id + "\t" + productName + "\t" + value + "\t" + amount + "\t" + value * amount;
     }
 }

@@ -3,8 +3,10 @@ package edu.iselab.grocery.util;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 
 import de.vandermeer.asciitable.CWC_LongestWordMax;
 import edu.iselab.grocery.features.manageproducts.Product;
@@ -162,6 +164,9 @@ public class ConsoleUtils {
         System.out.print(text);
     }
 
+    public static <T> void printTable(Set<T> items, Object... header) {
+        printTable(new ArrayList<>(items), header);
+    }
     public static <T> void printTable(List<T> items, Object... header) {
 
         AsciiTable table = new AsciiTable();

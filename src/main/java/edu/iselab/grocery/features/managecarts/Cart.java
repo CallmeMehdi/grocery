@@ -1,4 +1,4 @@
-package edu.iselab.grocery.features.manageorders;
+package edu.iselab.grocery.features.managecarts;
 
 import edu.iselab.grocery.database.AbstractModel;
 
@@ -13,7 +13,7 @@ public class Cart extends AbstractModel {
     @GeneratedValue
     private Long id;
 
-    protected double total;
+    protected double total = 0.0;
 
     @OneToMany(cascade=CascadeType.ALL)
     @JoinColumn(name="card_id")
@@ -43,6 +43,15 @@ public class Cart extends AbstractModel {
 
     public void setItems(Set<Item> items) {
         this.items = items;
+    }
+
+    public void addItem(Item item){
+
+        item.setOrder(this);
+
+        items.add(item);
+
+        total += (item.getAmount() * item.getValue());
     }
 
     @Override

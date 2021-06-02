@@ -15,7 +15,7 @@
         <property name="hbm2ddl.auto">update</property>
         <!-- Mappings -->
         <mapping class="edu.iselab.grocery.features.manageproducts.Product"/>
-        <mapping class="edu.iselab.grocery.features.manageorders.Cart"/>
-        <mapping class="edu.iselab.grocery.features.manageorders.Item"/>
+        <mapping class="edu.iselab.grocery.features.managecarts.Cart"/>
+        <mapping class="edu.iselab.grocery.features.managecarts.Item"/>
     </session-factory>
 </hibernate-configuration>
