@@ -1,10 +1,8 @@
 package edu.iselab.grocery.features.report;
 
-import edu.iselab.grocery.features.managecarts.Cart;
 import edu.iselab.grocery.features.managecarts.CartRepository;
+import edu.iselab.grocery.features.report.types.SingleReport;
 import edu.iselab.grocery.util.ConsoleUtils;
-
-import java.util.List;
 
 public class ReportController {
 
@@ -38,7 +36,7 @@ public class ReportController {
 
             switch (option) {
                 case 1:
-                    new SingleReportService().execute();
+                    new SingleReport().execute();
                     break;
                 case 2:
                     fullReport();

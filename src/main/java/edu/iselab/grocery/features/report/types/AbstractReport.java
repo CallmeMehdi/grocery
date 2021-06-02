@@ -1,4 +1,4 @@
-package edu.iselab.grocery.features.report;
+package edu.iselab.grocery.features.report.types;
 
 import edu.iselab.grocery.features.managecarts.CartRepository;
 

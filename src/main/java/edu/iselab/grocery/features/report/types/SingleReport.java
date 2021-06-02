@@ -1,11 +1,11 @@
-package edu.iselab.grocery.features.report;
+package edu.iselab.grocery.features.report.types;
 
 import edu.iselab.grocery.features.managecarts.Cart;
 import edu.iselab.grocery.util.ConsoleUtils;
 
 import java.util.List;
 
-public class SingleReportService extends AbstractReport{
+public class SingleReport extends AbstractReport {
 
     @Override
     public void execute(){
