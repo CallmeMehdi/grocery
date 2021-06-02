@@ -4,6 +4,10 @@ import de.vandermeer.asciitable.AsciiTable;
 import de.vandermeer.asciitable.CWC_LongestWordMax;
 import edu.iselab.grocery.util.ConsoleUtils;
 
+import java.io.Console;
+import java.util.Arrays;
+import java.util.List;
+
 public class ProductController {
 
     private static ProductController instance;
@@ -21,26 +25,23 @@ public class ProductController {
 
     public void start() {
 
-        int selectedOption = 0;
-
-        do {
+        while(true){
 
             ConsoleUtils.clearConsole();
 
             ConsoleUtils.printHeader("Products");
-
             ConsoleUtils.println("Menu:");
             ConsoleUtils.println("1 - Add Product");
             ConsoleUtils.println("2 - List Product");
             ConsoleUtils.println("3 - Search by Id");
-            ConsoleUtils.println("4 - Edit Product");
+            ConsoleUtils.println("4 - Search by Description");
+            ConsoleUtils.println("5 - Edit Product");
             ConsoleUtils.println("0 - Back");
             ConsoleUtils.printLine();
-            ConsoleUtils.println("Option: ");
 
-            selectedOption = ConsoleUtils.promptUserForAnInt();
+            int option = ConsoleUtils.promptUserForAnInt("Option");
 
-            switch (selectedOption) {
+            switch (option) {
                 case 1:
                     add();
                     break;
@@ -51,15 +52,17 @@ public class ProductController {
                     searchById();
                     break;
                 case 4:
+                    searchByDescription();
+                    break;
+                case 5:
                     edit();
                     break;
                 case 0:
-                    break;
+                    return;
                 default:
-                    System.err.println(" Invalid option. Please try again");
+                    ConsoleUtils.printError(" Invalid option. Please try again");
             }
-
-        } while(selectedOption != 0);
+        }
     }
 
     private void add() {
@@ -85,30 +88,7 @@ public class ProductController {
 
         ConsoleUtils.printHeader("List of Products");
 
-        AsciiTable table = new AsciiTable();
-
-        table.addRule();
-        table.addRow("Id", "Description", "Price", "Stock", "Last Modified Date");
-
-        for (Product product : productRepository.findAll()) {
-
-            table.addRule();
-
-            table.addRow(
-                product.getId(),
-                product.getDescription(),
-                product.getPrice(),
-                product.stock,
-                product.lastModifiedDate
-            );
-        }
-
-        table.addRule();
-
-        table.getContext().setWidth(50);
-        table.getRenderer().setCWC(new CWC_LongestWordMax(50));
-
-        System.out.println(table.render());
+        ConsoleUtils.printTable(productRepository.findAll(), "Id", "Description", "Price", "Stock");
 
         ConsoleUtils.pressEnterToContinue();
     }
@@ -119,15 +99,32 @@ public class ProductController {
 
         ConsoleUtils.printHeader("Search by Id");
 
-        long term = (long) ConsoleUtils.promptUserForAnInt("Search for");
+        long id = (long) ConsoleUtils.promptUserForAnInt("Search for");
 
-        Product found = productRepository.findById(term);
+        Product found = productRepository.findById(id);
 
         if (found == null) {
             ConsoleUtils.printError("Product not found");
         } else {
-            ConsoleUtils.println(found);
+            ConsoleUtils.printTable(Arrays.asList(found), "Id", "Description", "Price", "Stock");
         }
+
+        ConsoleUtils.pressEnterToContinue();
+    }
+
+    public void searchByDescription() {
+
+        ConsoleUtils.clearConsole();
+
+        ConsoleUtils.printHeader("Search by Description");
+
+        String term = ConsoleUtils.promptUserForANotBlankString("Search for");
+
+        List<Product> found = productRepository.findByDescription(term);
+
+        ConsoleUtils.printTable(found, "Id", "Description", "Price", "Stock");
+
+        ConsoleUtils.pressEnterToContinue();
     }
 
     public void edit() {

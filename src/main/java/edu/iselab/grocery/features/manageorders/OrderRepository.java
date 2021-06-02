@@ -1,24 +1,33 @@
-package edu.iselab.grocery.features.manageproducts;
+package edu.iselab.grocery.features.manageorders;
 
 import edu.iselab.grocery.database.AbstractDatabase;
 import edu.iselab.grocery.database.SQLDatabase;
+import edu.iselab.grocery.features.manageproducts.Product;
 import org.hibernate.Session;
 
-import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
-public class ProductRepository extends AbstractDatabase<Product> {
+public class OrderRepository extends AbstractDatabase<Cart> {
 
-    private static ProductRepository instance;
+    private static OrderRepository instance;
 
-    public static ProductRepository getInstance() {
+    public static OrderRepository getInstance() {
 
         if (instance == null) {
-            instance = new ProductRepository();
+            instance = new OrderRepository();
         }
 
         return instance;
+    }
+
+    public void save(Cart order) {
+
+        super.save(order);
+
+//        for(Item item : order.getItems()){
+//            super.save(item);
+//        }
     }
 
     public Product findById(Long id) {
@@ -38,10 +47,10 @@ public class ProductRepository extends AbstractDatabase<Product> {
         return query.getResultList();
     }
 
-    public List<Product> findAll(){
+    public List<Cart> findAll(){
 
         Session session = SQLDatabase.getInstance().openSession();
 
-        return session.createQuery("SELECT a FROM Product a", Product.class).getResultList();
+        return session.createQuery("SELECT a FROM Cart a", Cart.class).getResultList();
     }
 }

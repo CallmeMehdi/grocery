@@ -6,15 +6,18 @@
     <groupId>edu.iselab</groupId>
     <artifactId>grocery</artifactId>
     <version>0.0.1</version>
+    <packaging>jar</packaging>
 
     <name>Grocery</name>
     <description>An example of a grocery store system for academic purpose</description>
+    <url>https://github.com/iselab-dearborn/grocery</url>
 
     <properties>
         <java.version>15</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <main.class>edu.iselab.grocery.Launcher</main.class>
     </properties>
 
@@ -28,6 +31,23 @@
             <groupId>de.vandermeer</groupId>
             <artifactId>asciitable</artifactId>
             <version>0.3.2</version>
+        </dependency>
+        <!-- Database -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.200</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.4.32.Final</version>
+        </dependency>
+        <!-- Logger -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
         </dependency>
     </dependencies>
 

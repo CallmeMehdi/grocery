@@ -1,5 +1,7 @@
 package edu.iselab.grocery;
 
+import edu.iselab.grocery.database.SQLDatabase;
+import edu.iselab.grocery.features.manageorders.OrderController;
 import edu.iselab.grocery.features.manageproducts.ProductController;
 import edu.iselab.grocery.util.ConsoleUtils;
 
@@ -7,32 +9,40 @@ public class Launcher {
 
     public static void main(String[] args) {
 
-        int selectedOption = 0;
+        SQLDatabase.getInstance().open();
 
-        do {
+        while (true) {
 
             ConsoleUtils.clearConsole();
 
-            ConsoleUtils.printHeader("Grocery by ISE Lab", "An example of a grocery store system for academic purpose");
+            ConsoleUtils.printLogo();
             ConsoleUtils.println("Menu:");
             ConsoleUtils.println("1 - Products");
+            ConsoleUtils.println("2 - Orders");
             ConsoleUtils.println("0 - Quit");
             ConsoleUtils.printLine();
-            ConsoleUtils.println("Option: ");
 
-            selectedOption = ConsoleUtils.promptUserForAnInt();
+            int option = ConsoleUtils.promptUserForAnInt("Option");
 
-            switch (selectedOption) {
+            switch (option) {
                 case 1:
                     ProductController.getInstance().start();
                     break;
+                case 2:
+                    OrderController.getInstance().start();
+                    break;
                 case 0:
-                    ConsoleUtils.println("Bye!");
+                    quit();
                     break;
                 default:
                     ConsoleUtils.printError("Invalid option. Please try again");
             }
+        }
+    }
 
-        } while(selectedOption != 0);
+    protected static void quit(){
+        ConsoleUtils.println("Bye!");
+        SQLDatabase.getInstance().close();
+        System.exit(1);
     }
 }
