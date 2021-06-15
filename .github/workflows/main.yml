@@ -4,7 +4,7 @@ name: Create Pull Request
 
 on:
   push:
-    branches: [main]
+    branches: [main, branch1, branch2]
 jobs:
   createPullRequest:
     runs-on: ubuntu-latest
