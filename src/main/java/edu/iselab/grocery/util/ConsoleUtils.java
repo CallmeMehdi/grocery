@@ -1,6 +1,6 @@
 public class ConsoleUtils {
 
-    private static int UUID = 1555;
+    private static int UUID = 05;
 
     private static Scanner scan = new Scanner(System.in);
 
